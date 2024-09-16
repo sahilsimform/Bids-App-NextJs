@@ -1,1 +1,1 @@
-export * from "./welcome-onboarding-email";
+export * from "./bid-update-notification-inApp";

@@ -1,25 +1,9 @@
 import { z } from "zod";
 
 // Learn more about zod at the official website: https://zod.dev/
-export const payloadSchema = z.object({
-  teamImage: z
-    .string()
-    .url()
-    .default(
-      "https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/dca73b36-cf39-4e28-9bc7-8a0d0cd8ac70/standalone-gradient2x_2/w=128,quality=90,fit=scale-down",
-    ),
-  userImage: z
-    .string()
-    .url()
-    .default(
-      "https://react-email-demo-48zvx380u-resend.vercel.app/static/vercel-user.png",
-    ),
-  arrowImage: z
-    .string()
-    .url()
-    .default(
-      "https://react-email-demo-bdj5iju9r-resend.vercel.app/static/vercel-arrow.png",
-    ),
+export const inAppPayloadSchema = z.object({
+  body: z.string().default("Test Body"),
+  subject: z.string().default("This is the default subject"),
 });
 
 export const emailControlSchema = z.object({
@@ -31,7 +15,7 @@ export const emailControlSchema = z.object({
         type: z.enum(["heading", "text", "button", "code", "users"]),
         text: z.string().default(""),
         align: z.enum(["left", "center", "right"]).default("left"),
-      }),
+      })
     )
     .default([
       {
