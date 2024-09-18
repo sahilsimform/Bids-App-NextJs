@@ -21,19 +21,19 @@ const Login: FC<LoginProps> = ({ setLogin }) => {
   return (
     <div className="w-full flex justify-center items-center h-screen">
       <form
-        className="bg-white w-[80%] shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-black w-[80%] shadow-md rounded px-8 pt-6 pb-8 mb-4"
         onSubmit={submitForm}
       >
         <div className="mb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-white text-sm font-bold mb-2"
             htmlFor="username"
           >
             Username
           </label>
           <input
             onChange={(event) => setUsername(event.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow"
+            className="shadow appearance-none border rounded  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow"
             id="username"
             type="text"
             placeholder="Enter your username"

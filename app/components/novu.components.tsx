@@ -7,9 +7,12 @@ import {
 } from "@novu/notification-center";
 
 export const Novu = ({ user }: { user: string }) => {
+  const ApplicationIdentifier = process.env
+    .NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIER as string;
+
   return (
     <NovuProvider
-      applicationIdentifier={`${process.env?.NOVU_APPLICATION_IDENTIFIER}`}
+      applicationIdentifier={ApplicationIdentifier}
       subscriberId={user}
     >
       <PopoverNotificationCenter colorScheme="dark">

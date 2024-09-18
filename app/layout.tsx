@@ -4,7 +4,6 @@ import "./globals.css";
 import { cookies } from "next/headers";
 import Login from "./components/login";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

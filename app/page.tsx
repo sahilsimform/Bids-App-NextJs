@@ -7,7 +7,8 @@ import BidInput from "./components/bid.input";
 import { Novu as NovuId, TriggerRecipientsTypeEnum } from "@novu/node";
 import LogoutButton from "./components/LogoutButton";
 
-const novuData = new NovuId(`${process.env.NOVU_SECRET_KEY}`);
+const NovuSecretKey = process.env.NEXT_PUBLIC_NOVU_SECRET_KEY as string;
+const novuData = new NovuId(NovuSecretKey);
 
 export default async function Home() {
   const login = cookies().get("login");
